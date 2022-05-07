@@ -1,0 +1,28 @@
+{
+  "name": "scaffolding",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "repository": "git@github.com:LuciNyan/Scaffolding.git",
+  "author": "luci <me@lucinyan.com>",
+  "license": "MIT",
+  "engines": {
+    "npm": ">=8.2.3"
+  },
+  "scripts": {
+    "start": "pnpm -r --parallel --filter=webchat --filter=button --filter=sdk run dev",
+    "build": "pnpm -r --filter=webchat --filter=button --filter=sdk run build"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.3",
+    "@typescript-eslint/eslint-plugin": "5.22.0",
+    "@typescript-eslint/parser": "5.22.0",
+    "eslint": "8.15.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.29.4",
+    "typescript": "4.6.4",
+    "prettier": "^2.3.2"
+  }
+}

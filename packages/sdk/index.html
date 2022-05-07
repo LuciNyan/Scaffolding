@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Luci's Scaffolding" />
+    <title>Luci's Scaffolding</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      Array.prototype.filter = function() {
+        throw new Error('BOOM!')
+      }
+    </script>
+    <script>
+      var webchat;
+      ((window, document, node, props, configs) => {
+        if (window.TalkdeskChatSDK) {
+          console.error("TalkdeskChatSDK already included");
+          return;
+        }
+        var divContainer = document.createElement("div");
+        divContainer.id = node;
+        document.body.appendChild(divContainer);
+        var currentDate = new Date().getTime();
+        var src = `/src/index.ts?t=` + currentDate;
+        var script = document.createElement("script");
+        var firstScriptTag = document.getElementsByTagName("script")[0];
+        script.type = "module";
+        script.charset = "UTF-8";
+        script.id = "tdwebchatscript";
+        script.src = src;
+        script.async = true;
+        firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
+        script.onload = () => {
+          console.log('TalkdeskChatSDK', TalkdeskChatSDK)
+          webchat = TalkdeskChatSDK(node, props);
+          webchat.init(configs);
+        };
+      })(
+        window,
+        document,
+        "tdWebchat",
+        { flowId: "837c29700a8c4168a0af8195b9e98fbe", accountId: "", region: "td-us-1" },
+        { enableEmoji: true, enableUserInput: true }
+      );
+    </script>
+  </body>
+</html>

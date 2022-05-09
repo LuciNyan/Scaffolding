@@ -13,11 +13,8 @@
     "outDir": "./dist",
     "declaration": true,
     "inlineSourceMap": true,
-    "types": [
-      "vite/client"
-    ]
+    "jsx": "preserve",
+    "types": ["vite/client"]
   },
-  "exclude": [
-    "**/dist/**",
-  ],
+  "exclude": ["**/dist/**"]
 }

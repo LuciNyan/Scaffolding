@@ -1,3 +1,3 @@
-import {TalkdeskChatSDK} from "./sdk";
+import { TalkdeskChatSDK } from './sdk'
 
 window.TalkdeskChatSDK = TalkdeskChatSDK

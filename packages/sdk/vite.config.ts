@@ -1,31 +1,32 @@
-import type { UserConfigFn, UserConfig } from "vite";
-import legacy from "@vitejs/plugin-legacy";
-import tsconfigPaths from "vite-tsconfig-paths";
-import mkcert from "vite-plugin-mkcert";
+import legacy from '@vitejs/plugin-legacy'
+import type { UserConfig, UserConfigFn } from 'vite'
+import mkcert from 'vite-plugin-mkcert'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
-const defineConfig: UserConfigFn = ({ command, mode }) => {
+const defineConfig: UserConfigFn = () => {
   const config: UserConfig = {
     server: {
       https: true,
-      port: 7000
+      port: 7000,
+      host: '0.0.0.0'
     },
     plugins: [
       tsconfigPaths(),
       legacy(),
       mkcert({
-        source: "coding",
-      }),
+        source: 'coding'
+      })
     ],
     build: {
       rollupOptions: {
         output: {
-          format: "umd",
-          name: "webchat-sdk",
-        },
-      },
-    },
-  };
-  return config;
-};
+          format: 'umd',
+          name: 'webchat-sdk'
+        }
+      }
+    }
+  }
+  return config
+}
 
-export default defineConfig;
+export default defineConfig

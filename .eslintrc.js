@@ -43,11 +43,7 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.json']
       },
       typescript: {
-        project: [
-          resolve('./packages/sdk/tsconfig.json'),
-          resolve('./packages/button/tsconfig.json'),
-          resolve('./packages/webchat/tsconfig.json')
-        ]
+        project: [resolve('./packages/sdk/tsconfig.json')]
       }
     }
   },

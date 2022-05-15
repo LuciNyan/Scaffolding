@@ -1,6 +1,6 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["Webchat", "Talkdesk"],
+  "words": ["Segoe", "Roboto", "Cantarell", "Neue"],
   "ignorePaths": ["**/node_modules/**"]
 }

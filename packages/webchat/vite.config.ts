@@ -7,9 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 const defineConfig: UserConfigFn = () => {
   const config: UserConfig = {
     server: {
-      https: true,
-      port: 2671,
-      host: '127.0.0.1'
+      middlewareMode: 'ssr'
     },
     plugins: [
       react(),
